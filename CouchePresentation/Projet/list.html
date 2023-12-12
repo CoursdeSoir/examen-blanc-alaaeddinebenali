@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Projet</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Date debut</th>
+        <th>Date fin</th>
+        <th>Effectif</th>
+        <th>Besion</th>
+        <th>Type</th>
+    </tr>
+    {% for projet in projects %}
+    <tr>
+        <td>{{projet.id}}</td>
+        <td>{{projet.date_debut}}</td>
+        <td>{{projet.date_fin}}</td>
+        <td>{{projet.effectif}}</td>
+        <td>{{projet.besoin}}</td>
+        <td>{{projet.type}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
