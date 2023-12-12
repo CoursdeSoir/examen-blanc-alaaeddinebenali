@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Projet
+from .models import Projet, Developpeur
 
 
 @admin.display(description="projet")
@@ -46,3 +46,8 @@ class ProjetAdmin(admin.ModelAdmin):
 
 
 admin.register(Projet, ProjetAdmin)
+
+
+@admin.register(Developpeur)
+class DeveloppeurAdmin(admin.ModelAdmin):
+    readonly_fields = ('date_adhesion',)

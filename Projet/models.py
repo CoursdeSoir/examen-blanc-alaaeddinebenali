@@ -1,9 +1,8 @@
-import datetime
+from datetime import datetime
 
 from django.db import models
 
 # Create your models here.
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from Etudiant.models import Etudiant
@@ -42,6 +41,6 @@ class Projet(models.Model):
 class Developpeur(models.Model):
     etudiant = models.ForeignKey(Etudiant, on_delete=models.CASCADE)
     projet = models.ForeignKey(Projet, on_delete=models.CASCADE)
-    date_adhesion = models.DateField(datetime.datetime.now(), null=True, auto_now_add=True)
+    date_adhesion = models.DateField('Date Adhesion', null=True,auto_now_add=True)
 
     unique_together = [['etudiant', 'projet']]
